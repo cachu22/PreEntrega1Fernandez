@@ -1,10 +1,9 @@
-import '../App.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
-
+import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
@@ -12,13 +11,22 @@ function NavBar() {
       <Navbar id="barra">
         <Container>
           <Nav>
-            <Nav.Link href="TecniPC" id="menu-letras" >TecniPC</Nav.Link>
-            <Nav.Link href="Historia" id="menu-letras" >Historia</Nav.Link>
-            <Nav.Link href="Contacto" id="menu-letras">Contacto</Nav.Link>
-            <Nav.Link href="Fotos" id="menu-letras">Fotos</Nav.Link>
+            <ul>
+              <li>
+                  <NavLink to="/Contacto">Contacto</NavLink>
+              </li>
+              <li>
+                  <NavLink to="/Productos">Productos</NavLink>
+              </li>
+              <li>
+                  <NavLink to="/Mantenimiento">Mantenimiento</NavLink>
+              </li>
+            </ul>
           </Nav>
           <div>
-            <h1>TecniPC</h1>
+            <Link to={"./"}>
+            <img src="/img/logo-inicio.png" alt="icono" width={75}></img>
+            </Link>
           </div>
           <div>
           <CartWidget/>
@@ -32,6 +40,4 @@ function NavBar() {
   );
 }
 
-
-  
   export default NavBar;

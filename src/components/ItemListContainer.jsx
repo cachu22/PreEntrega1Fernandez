@@ -1,7 +1,11 @@
-const ItemListContainer = ({Greeting}) => {
-    return(
-        <p>{Greeting}</p>
-    )
+import Listatotal from "../Listatotal";
+
+const ItemListContainer = () => {
+    return (
+        <div>
+            <Listatotal />
+        </div>
+    );
 }
 
 export default ItemListContainer;

@@ -1,6 +1,11 @@
 
 h1{
     color: yellow;
+    text-align: center;
+}
+
+div{
+    text-align: center;
 }
 
 h2{
@@ -20,23 +25,9 @@ h2{
     background-image: url(/src/components/img/background-gral.jpg);
 }
 
-.cards-gral{
-    margin: 3rem;
-    align-items: center;
-}
-
-.cards-items{
-    align-items: center;
-    font-size: 30px;
-}
-
 #menu-letras {
     color: white;
     font-size: 2rem;
-}
-
-#cards.tarjetas{
-    margin-bottom: 3;
 }
 
 .item {
@@ -56,4 +47,12 @@ h2{
     color:magenta;
     background-color: aliceblue;
     text-align: center;
+}
+
+#icono-carro {
+    background-color: rgba(255,255,255,0.0);
+}
+
+#botones {
+    margin: 30px;
 }
