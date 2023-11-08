@@ -1,10 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import { NavLink } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import '../App.css';
+import '../../App.css';
 
 const NavBar = () => (
   <>
@@ -30,7 +30,6 @@ const NavBar = () => (
         </div>
         <div>
           <CartWidget/>
-          <span className='items'>99+</span>
         </div>
       </Container>
     </Navbar>

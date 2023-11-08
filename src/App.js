@@ -1,8 +1,8 @@
 /* import { useState } from "react"; */
 import{ BrowserRouter, Routes, Route} from "react-router-dom"
 import Contacto from "./components/Paginas/Contacto";
-import NavBar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Carrito from "./components/Carrito";
 import Mantenimiento from "./mantenimiento";
 import ItemDetailContainer from "./components/Paginas/ItemDetailContainer"
@@ -32,6 +32,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <NavBar />
+                <ItemListContainer greeting={"Bienvenidos"} />
                 <ProdContext.Provider value={prueba}>
                 <Routes>
                     <Route path='/' element={<ItemListContainer />} />

@@ -3,6 +3,7 @@ import { productService } from "../producto-detail/index";
 import { Card, NavLink } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; 
+import ItemCount from "../ItemCount/ItemCount";
 
 const Productos = () => {
   const [product, setProduct] = useState(null);
@@ -33,6 +34,7 @@ const Productos = () => {
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroup.Item>Precio: ${product.precio}</ListGroup.Item>
+              <ItemCount initial={0} stock={10} onAdd={(quantity) => console.log('Cantidad agregada', quantity)}/>
             </ListGroup>
             <Card.Body>
               <NavLink to="/Carrito" id="botones">

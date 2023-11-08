@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { NavLink } from "react-router-dom";
 import { Accordion } from "react-bootstrap";
+import ItemCount from "./components/ItemCount/ItemCount";
 
 function Mantenimiento () {
     const [products, setProducts] = useState([]);
@@ -44,11 +45,9 @@ console.log(products);
                   </Card.Body>
                   <ListGroup className="list-group-flush">
                     <ListGroup.Item>Precio: ${producto.precio}</ListGroup.Item>
+                    <ListGroup.Item><ItemCount initial={0} stock={10} onAdd={(quantity) => console.log('Cantidad agregada', quantity)}/></ListGroup.Item>
                   </ListGroup>
                   <Card.Body>
-                    <NavLink to="/Carrito" id="botones">
-                      Comprar
-                    </NavLink>
                   </Card.Body>
                 </Card>
               </div>
