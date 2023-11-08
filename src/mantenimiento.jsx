@@ -34,7 +34,7 @@ function Mantenimiento() {
                 <Accordion style={{ display: 'flex', width: '25rem' }} >
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>
-                      <Link to={`/item/${producto.id}`}>Detalles</Link> {/* Redirige a la ruta con el ID */}
+                      <Link to={`/item/${producto.id}`}>Detalles</Link>
                     </Accordion.Header>
                     <Accordion.Body>
                       <Card.Text>{producto.descripcion}</Card.Text>
