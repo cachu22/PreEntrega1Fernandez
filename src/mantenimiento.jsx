@@ -21,17 +21,17 @@ console.log(products);
 
     return (
         <>
-          <h1>Nuestros Productos y Servicios</h1>
+          <h1>Nuestros Servicios</h1>
           {isLoading ? (
-            <h4>Cargando nuestros productos y servicios</h4>
+            <h4>Cargando nuestros servicios</h4>
           ) : (
-            products.slice(0, 8).map((producto) => (
-              <div key={producto.id} style={{ display: 'flex' }}>
+            products.slice(4, 8).map((producto) => (
+              <div key={producto.id} style={{ display: 'flex', width: '25rem' }} >
                 <Card style={{ width: '18rem', margin: '3rem' }}>
-                  <Card.Img variant="top" src={`./img/${producto.imagen}`} />
                   <Card.Body>
+                  <Card.Img variant="top" src={`./img/${producto.imagen}`} />
                     <Card.Title>{producto.nombre}</Card.Title>
-                    <Accordion>
+                    <Accordion style={{ display: 'flex', width: '25rem' }} >
                       <Accordion.Item eventKey="0">
                         <Accordion.Header>Detalles</Accordion.Header>
                         <Accordion.Body>

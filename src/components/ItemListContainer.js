@@ -1,9 +1,9 @@
-import Listatotal from "../Listatotal";
+import Button from '../components/Button'
 
 const ItemListContainer = () => {
     return (
         <div>
-            <Listatotal />
+            <Button />
         </div>
     );
 }

@@ -1,0 +1,42 @@
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { productos } from "./Mock/products";
+import './App.css';
+
+
+function Productos() {
+  const { categoria } = useParams(); // Obtener la categoría desde los parámetros de la URL
+
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Filtrar los productos en función de la categoría
+    const filtered = productos.filter(producto => producto.categoria === categoria);
+
+    setTimeout(() => {
+      setFilteredProducts(filtered);
+      setIsLoading(false);
+    }, 2000);
+  }, [categoria]);
+
+  return (
+    <>
+      <h1>{categoria} - Nuestros Productos</h1>
+      {isLoading ? (
+        <h4>Cargando nuestros productos</h4>
+      ) : (
+        <div>
+          {filteredProducts.map((producto) => (
+            <div key={producto.id}>
+              <h2>{producto.nombre}</h2> {/* Renderiza el nombre del producto */}
+              {/* Otros detalles del producto */}
+            </div>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+export default Productos;

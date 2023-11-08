@@ -5,6 +5,7 @@ export const productos = [
             "precio": 5000,
             "stock": 50,
             "Descripcion": "2TB",
+            "categoria": "Productos",
             "img": "Reparacion7.jpg"
         },
         {
@@ -13,6 +14,7 @@ export const productos = [
             "precio": 10000,
             "stock": 50,
             "Descripcion": "128GB",
+            "categoria": "Productos",
             "img": "Reparacion8.jpg"
         },
         {
@@ -21,6 +23,7 @@ export const productos = [
             "precio": 1000,
             "stock": 50,
             "Descripcion": "7.1",
+            "categoria": "Productos",
             "img": "Reparacion9.jpg"
         },
         {
@@ -29,6 +32,7 @@ export const productos = [
             "precio": 4000,
             "stock": 50,
             "Descripcion": "Mecanico",
+            "categoria": "Productos",
             "img": "Reparacion10.jpg"
         },
         {
@@ -37,6 +41,7 @@ export const productos = [
             "precio": 2000,
             "stock": 1,
             "Descripcion": "Precio a convenir",
+            "categoria": "Mantenimiento",
             "img": "Reparacion1.jpg"
         },
         {
@@ -45,6 +50,7 @@ export const productos = [
             "precio": 10000,
             "stock": 50,
             "Descripcion": "Todos sus componentes",
+            "categoria": "Mantenimiento",
             "img": "Reparacion2.jpg"
         },
         {
@@ -53,6 +59,7 @@ export const productos = [
             "precio": 5000,
             "stock": 50,
             "Descripcion": "Lo último de lo último",
+            "categoria": "Mantenimiento",
             "img": "Reparacion3.jpg"
         },
         {
@@ -61,6 +68,7 @@ export const productos = [
             "precio": 5000,
             "stock": 50,
             "Descripcion": "Brillante",
+            "categoria": "Mantenimiento",
             "img": "Reparacion4.jpg"
         },
         {
@@ -69,6 +77,7 @@ export const productos = [
             "precio": 253261,
             "stock": 3,
             "Descripcion": "4GB GDDR5",
+            "categoria": "Productos",
             "img": "Video1.png"
         },
         {
@@ -77,6 +86,7 @@ export const productos = [
             "precio": 379999,
             "stock":2,
             "Descripcion": "4GB GDDR5",
+            "categoria": "Productos",
             "img": "Video2.png"
         },
         {
@@ -85,6 +95,7 @@ export const productos = [
             "precio": 135999,
             "stock": 5,
             "Descripcion": "4GB GDDR5",
+            "categoria": "Productos",
             "img": "Video3.png"
         },
         {
@@ -93,6 +104,7 @@ export const productos = [
             "precio": 78151,
             "stock": 0,
             "Descripcion": "4GB GDDR5",
+            "categoria": "Productos",
             "img": "Video4.png"
         },
         {
@@ -101,14 +113,16 @@ export const productos = [
              "precio": 989999,
              "stock": 1,
              "Descripcion": "4GB GDDR5",
+             "categoria": "Productos",
              "img": "Video5.png"
             },
         {
             "id": 14,
-            "nombre": "RTX 3060 Ph-rtx3060",
+            "nombre": "RTX 3060 PH-RTX3060",
             "precio": 259799,
             "stock": 2,
             "Descripcion": "4GB GDDR5",
+            "categoria": "Productos",
             "img": "Video6.png"
         },
 ];
