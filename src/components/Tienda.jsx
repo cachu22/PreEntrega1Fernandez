@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Mantenimiento from "../mantenimiento";
 import { Accordion } from "react-bootstrap";
-import Productos from "./Paginas/Producto";
+import Productos from "./Paginas/ItemDetailContainer";
 
 
-const BotProductos = () => {
+const Tienda = () => {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const handleClick = () => {
@@ -39,7 +39,7 @@ const BotProductos = () => {
   );
 };
 
-export default BotProductos;
+export default Tienda;
 
 
 

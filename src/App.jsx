@@ -5,7 +5,7 @@ import NavBar from "./components/Navbar";
 import ItemListContainer from "./components/ItemListContainer";
 import Carrito from "./components/Carrito";
 import Mantenimiento from "./mantenimiento";
-import Productos from "./components/Paginas/Producto";
+import ItemDetailContainer from "./components/Paginas/ItemDetailContainer"
 import { initializeApp } from "firebase/app";
 import { ProdContext } from "./Context/prod";
 
@@ -36,11 +36,12 @@ function App() {
                     <Route path='/' element={<ItemListContainer />} />
                     <Route path='/Category:id' element={<ItemListContainer />} />
                     <Route path="/Contacto" element={<Contacto />}/>
-                    <Route path="/Productos" element={<Productos/>}/>
+                    <Route path="/Productos" element={<ItemDetailContainer />} />
                     <Route path="/Carrito" element={<Carrito />}/>
                     <Route path="/mantenimiento" element={<Mantenimiento/>}/>
                     <Route path="/Listatotal" element={"item/:id"}/>
                     <Route path="/productos/:categoria" element={"Productos"}/>
+                    <Route path="item/:id" element={<ItemDetailContainer/>}/>
                 </Routes>
                 </ProdContext.Provider>
             </BrowserRouter>

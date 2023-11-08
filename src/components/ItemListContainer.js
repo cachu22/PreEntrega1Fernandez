@@ -1,9 +1,9 @@
-import Button from '../components/Button'
+import Tienda from '../components/Tienda'
 
 const ItemListContainer = () => {
     return (
         <div>
-            <Button />
+            <Tienda />
         </div>
     );
 }

@@ -2,19 +2,19 @@ import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const getProducto = async (id) => {
   const db = getFirestore();
-  const docRef = doc(db, "Productos", "MEVbAG8IBWIdnGODsRto"); // Usar la variable 'id' en lugar de una cadena "id"
+  const docRef = doc(db, "Productos", id);
   console.log(docRef);
 
   try {
     const snapshot = await getDoc(docRef);
 
     if (snapshot.exists()) {
-      return snapshot.data(); // Devolver los datos del producto
+      return snapshot.data();
     } else {
-      return null; // Otra respuesta apropiada si el documento no existe
+      return null;
     }
   } catch (error) {
-    throw error; // Manejo de errores adecuado
+    throw error;
   }
 };
 
