@@ -9,6 +9,7 @@ import ItemDetailContainer from "./components/Paginas/ItemDetailContainer"
 import { initializeApp } from "firebase/app";
 import { ProdContext } from "./Context/prod";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyBrCEf0hT7J6uYvUr_34qni0uAlDpFM5wE",
   authDomain: "react-a14d7.firebaseapp.com",
@@ -38,10 +39,10 @@ function App() {
                     <Route path="/Contacto" element={<Contacto />}/>
                     <Route path="/Productos" element={<ItemDetailContainer />} />
                     <Route path="/Carrito" element={<Carrito />}/>
-                    <Route path="/mantenimiento" element={<Mantenimiento/>}/>
+                    <Route path="/Mantenimiento" element={<Mantenimiento/>}/>
                     <Route path="/Listatotal" element={"item/:id"}/>
                     <Route path="/productos/:categoria" element={"Productos"}/>
-                    <Route path="item/:id" element={<ItemDetailContainer/>}/>
+                    <Route path="/item/detalles" element={""} />
                 </Routes>
                 </ProdContext.Provider>
             </BrowserRouter>

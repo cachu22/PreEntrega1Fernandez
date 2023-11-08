@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Mantenimiento from "../mantenimiento";
 import { Accordion } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Importa Link
 import Productos from "./Paginas/ItemDetailContainer";
 
 const Tienda = () => {
@@ -25,9 +24,7 @@ const Tienda = () => {
           <Accordion>
             {opciones.map((opcion) => (
               <Accordion.Item key={opcion.id} eventKey={opcion.id}>
-                <Accordion.Header>
-                  <Link to={`/category/${opcion.id}`}>{opcion.nombre}</Link>
-                </Accordion.Header>
+                <Accordion.Header>{opcion.nombre}</Accordion.Header>
                 <Accordion.Body>
                   {opcion.id === "servicios" ? <Mantenimiento /> : null}
                   {opcion.id === "productos" ? <Productos /> : null}

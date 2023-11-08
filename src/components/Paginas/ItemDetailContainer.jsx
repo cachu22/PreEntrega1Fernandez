@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { productService } from "../producto-detail";
+import { productService } from "../producto-detail/index";
 import { Card, NavLink } from "react-bootstrap";
-import { Accordion } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; 
 
@@ -16,7 +15,7 @@ const Productos = () => {
   }, []);
 
   const handleDetallesClick = () => {
-    navigate(`/item/${product.id}`);
+    navigate(`/item/detalles`);
   };
 
   return (
@@ -28,16 +27,9 @@ const Productos = () => {
             <Card.Img variant="top" src="https://firebasestorage.googleapis.com/v0/b/react-a14d7.appspot.com/o/Reparacion10.jpg?alt=media&token=fc816cf3-850f-4412-82aa-ea51b3bfa2c2&_gl=1*a4g8i2*_ga*NTY4NDczMTY4LjE2OTgyODEwOTQ.*_ga_CW55HF8NVT*MTY5OTQwNjkzNy45LjEuMTY5OTQxMTE4Ni42MC4wLjA." />
             <Card.Body>
               <Card.Title>{product && product.nombre}</Card.Title>
-              <Accordion>
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header onClick={handleDetallesClick}>Detalles</Accordion.Header>
-                  <Accordion.Body>
-                    <Card.Text>{product.descripcion}</Card.Text>
-                    <ListGroup.Item>Stock: {product.stock} unidades</ListGroup.Item>
-                    <ListGroup.Item>Precio: {product.precio}</ListGroup.Item>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
+            </Card.Body>
+            <Card.Body>
+              <button onClick={handleDetallesClick}>Detalles</button>
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroup.Item>Precio: ${product.precio}</ListGroup.Item>
