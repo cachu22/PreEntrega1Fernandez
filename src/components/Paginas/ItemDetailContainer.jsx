@@ -3,11 +3,11 @@ import { productService } from "../producto-detail";
 import { Card, NavLink } from "react-bootstrap";
 import { Accordion } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 const Productos = () => {
   const [product, setProduct] = useState(null);
-  const navigate = useNavigate(); // Inicializa useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
@@ -15,9 +15,7 @@ const Productos = () => {
     }, 3000);
   }, []);
 
-  // Controlador de clic en "Detalles"
   const handleDetallesClick = () => {
-    // Navega a la ruta /item/:id cuando se hace clic en "Detalles"
     navigate(`/item/${product.id}`);
   };
 
