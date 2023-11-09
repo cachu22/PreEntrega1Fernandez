@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { productService } from "../producto-detail/index";
+import { productService } from "../../ItemDetailContainer/index";
 import { Card, NavLink } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; 
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCount from "../../ItemCount/ItemCount";
 
 const Productos = () => {
   const [product, setProduct] = useState(null);

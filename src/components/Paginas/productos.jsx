@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { productService } from "../producto-detail";
+import { productService } from "../ItemDetailContainer";
 
 const Productos = () => {
   const [productos, setProductos] = useState(null);
@@ -8,15 +8,6 @@ const Productos = () => {
     setTimeout(() => {
     productService.getProductos().then(data => setProductos(data));
 
-
-/*         setProduct(producto);
-        console.log("producto", producto);
-      } catch (error) {
-        console.error("Error al obtener productos:", error);
-      }
-    };
-
-    obtenerProducto(); */
   },3000);
   }, []);
 
@@ -30,13 +21,30 @@ const Productos = () => {
 
         {/* <TableProductos items={productos} /> */}
       
-     {/*  {productos ? (
-        <div>
-        </div>
-      ) : (
-        <p>Cargando...</p>
-      )} */}
+     {}
     </div>
   );
   }
 export default Productos;
+
+
+/* linea10 */
+
+/*         setProduct(producto);
+        console.log("producto", producto);
+      } catch (error) {
+        console.error("Error al obtener productos:", error);
+      }
+    };
+
+    obtenerProducto(); */
+
+
+    /* linea22*/
+
+    /*  {productos ? (
+        <div>
+        </div>
+      ) : (
+        <p>Cargando...</p>
+      )} */

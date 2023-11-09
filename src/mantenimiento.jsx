@@ -3,7 +3,6 @@ import { productos } from "./Mock/products";
 import './App.css';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { NavLink } from "react-router-dom";
 import { Accordion } from "react-bootstrap";
 import ItemCount from "./components/ItemCount/ItemCount";
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Mantenimiento from "../mantenimiento";
 import { Accordion } from "react-bootstrap";
-import Productos from "./Paginas/ItemDetailContainer";
+import Productos from "./CartWidget/ItemDetailContainer/ItemDetailContainer";
 
 const Tienda = () => {
   const [isDisabled, setIsDisabled] = useState(false);
