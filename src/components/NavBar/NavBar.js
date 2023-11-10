@@ -2,8 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from '../CartWidget/CartWidget';
-import { NavLink } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import '../../App.css';
 
 const NavBar = () => (
@@ -13,13 +12,13 @@ const NavBar = () => (
         <Nav>
           <ul>
             <li>
-              <NavLink to="/Contacto" id='Fuente-head'>Contacto</NavLink>
+              <NavLink to={`/Contacto`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Contacto</NavLink>
             </li>
             <li>
               <NavLink to="/Productos" id='Fuente-head'>Productos</NavLink>
             </li>
             <li>
-              <NavLink to="/Mantenimiento" id='Fuente-head'>Mantenimiento</NavLink>
+              <NavLink to={`category/Mantenimiento`} id='Fuente-head'>Mantenimiento</NavLink>
             </li>
           </ul>
         </Nav>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Mantenimiento from "../mantenimiento";
+/* import Mantenimiento from "./ItemDetailContainer/mantenimiento"; */
 import { Accordion } from "react-bootstrap";
 import Productos from "./CartWidget/ItemDetailContainer/ItemDetailContainer";
 
@@ -26,7 +26,7 @@ const Tienda = () => {
               <Accordion.Item key={opcion.id} eventKey={opcion.id}>
                 <Accordion.Header>{opcion.nombre}</Accordion.Header>
                 <Accordion.Body>
-                  {opcion.id === "servicios" ? <Mantenimiento /> : null}
+{/*                   {opcion.id === "servicios" ? <Mantenimiento /> : null} */}
                   {opcion.id === "productos" ? <Productos /> : null}
                 </Accordion.Body>
               </Accordion.Item>

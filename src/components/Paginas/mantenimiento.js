@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { productos } from "./Mock/products";
-import './App.css';
+import { productos } from "../../Mock/products";
+import '../../App.css';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Accordion } from "react-bootstrap";
-import ItemCount from "./components/ItemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 
 function Mantenimiento () {
     const [products, setProducts] = useState([]);

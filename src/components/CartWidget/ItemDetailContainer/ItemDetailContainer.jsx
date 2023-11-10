@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { productService } from "../../ItemDetailContainer/index";
+import productService from '../ItemDetailContainer/ItemDetailContainer'
 import { Card, NavLink } from "react-bootstrap";
 import { ListGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; 
