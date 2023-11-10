@@ -3,15 +3,15 @@ import { productos } from "../Mock/products";
 export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(productos)
-        }, 1000)
-    })
+            resolve(productos);
+        }, 1000);
+    });
 }
 
 export const getProductById = (productId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            const product = productos.find(prod => productos.id === productId);
+            const product = productos.find(prod => prod.id === productId); // Cambiado a 'productos'
             if (product) {
                 resolve(product);
             } else {
@@ -25,14 +25,12 @@ export const getProductsByCategory = (productCategory) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             if (productCategory === "Productos") {
-                // Filtra los productos por la categoría "Productos."
-                const productosProductos = productos.filter(prod => prod.categoria === "Productos");
+                const productosProductos = productos.filter(prod => prod.categoria === "Productos"); // Cambiado a 'productos'
                 resolve(productosProductos);
             } else {
-                // Si no es "Productos," busca por la categoría proporcionada.
-                const productosByCategory = productos.filter(prod => prod.categoria === productCategory);
+                const productosByCategory = productos.filter(prod => prod.categoria === productCategory); // Cambiado a 'productos'
                 resolve(productosByCategory);
             }
         }, 1000);
-    })
+    });
 }

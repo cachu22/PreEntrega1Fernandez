@@ -1,10 +1,4 @@
-import { useContext } from "react";
-import { ProdContext } from "../../Context/prod";
-
 const Contacto = () => {
-
-    const miContext = useContext(ProdContext)
-    console.log(miContext);
 
     return(
         <div>
@@ -14,7 +8,3 @@ const Contacto = () => {
 }
 
 export default Contacto;
-
-
-
-
