@@ -25,10 +25,10 @@ export const getProductsByCategory = (productCategory) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             if (productCategory === "Productos") {
-                const productosProductos = productos.filter(prod => prod.categoria === "Productos"); // Cambiado a 'productos'
+                const productosProductos = productos.filter(Productos => Productos.categoria === "Productos"); // Cambiado a 'productos'
                 resolve(productosProductos);
             } else {
-                const productosByCategory = productos.filter(prod => prod.categoria === productCategory); // Cambiado a 'productos'
+                const productosByCategory = productos.filter(Productos => Productos.categoria === productCategory); // Cambiado a 'productos'
                 resolve(productosByCategory);
             }
         }, 1000);

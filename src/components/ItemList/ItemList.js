@@ -1,13 +1,13 @@
 import './ItemList.css'
 import Item from '../Item/Item'
 
-const ItemList = ({ productos }) => {
+const ItemList = ({ Productos }) => {
     return (
         <div className='ListGroup'>
-            {productos && productos.length > 0 ? (
-                productos.map(prod => <Item key={productos.id} {...productos} />)
+            {Productos && Productos.length > 0 ? (
+                Productos.map(prod => <Item key={prod.id} {...prod} />)
             ) : (
-                <p>No hay productos disponibles.</p>
+                <p>No hay Productos disponibles.</p>
             )}
         </div>
     )
