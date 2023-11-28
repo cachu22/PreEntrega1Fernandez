@@ -14,12 +14,6 @@ const NavBar = () => (
             <li>
               <NavLink to={`/Contacto`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Contacto</NavLink>
             </li>
-            <li>
-              <NavLink to="/Productos" id='Fuente-head'>Productos</NavLink>
-            </li>
-            <li>
-              <NavLink to={`category/Mantenimiento`} id='Fuente-head'>Mantenimiento</NavLink>
-            </li>
           </ul>
         </Nav>
         <div>
@@ -28,8 +22,8 @@ const NavBar = () => (
           </Link>
         </div>
         <div>
-        <CartWidget />
-        </div>
+          <CartWidget />
+          </div>
       </Container>
     </Navbar>
   </>

@@ -18,12 +18,13 @@ const Item = ({ id, nombre, img, precio, stock }) => {
                         <ListGroup.Item>Stock Disponible: {stock}</ListGroup.Item>
                     </ListGroup>
                     <Card.Body>
-                        <ListGroup.Item>
-                            <Link to={`/item/${id}`} className='Option'>
-                                Ver detalle
-                            </Link>
-                        </ListGroup.Item>
-                        <ItemCount initial={0} stock={stock} onAdd={(quantity) => console.log('Cantidad agregada', quantity)} />
+                        <ListGroup className="list-group-flush">
+                            <ListGroup.Item>
+                                <Link to={`/item/${id}`} className='Option'>
+                                    Ver detalle
+                                </Link>
+                            </ListGroup.Item>
+                        </ListGroup>
                     </Card.Body>
                 </Card>
             </Col>

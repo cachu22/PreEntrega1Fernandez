@@ -60,3 +60,12 @@ h2{
 #botones {
     margin: 30px;
 }
+
+.CartQuantity {
+    color: #30FF24;
+    font-size: 15px;
+}
+
+.ActiveOption {
+    color:#30FF24 ;
+}

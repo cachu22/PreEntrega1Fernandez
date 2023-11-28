@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail'
-import { useParams } from 'react-router-dom'
-import { getDoc, doc } from 'firebase/firestore'
-import { db } from '../services/firebase/firebaseConfig'
+import { useState, useEffect } from 'react';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router-dom';
+import { getDoc, doc } from 'firebase/firestore';
+import { db } from '../services/firebase/firebaseConfig';
 
 const ItemDetailContainer = () => {
-    const [productos, setProductos] = useState(null); // Cambiado a 'productos'
+    const [productos, setProductos] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const { itemId } = useParams();
@@ -13,31 +13,32 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true);
 
-        const docRef = doc(db, 'products', itemId);
+        const docRef = doc(db, 'Productos', itemId);
+
+        setProductos(null); // Reiniciar productos mientras se carga
 
         getDoc(docRef)
             .then(response => {
                 if (response.exists()) {
                     const data = response.data();
                     const productAdapted = { id: response.id, ...data };
-                    setProductos(productAdapted); // Cambiado a 'productos'
+                    setProductos(productAdapted);
                 } else {
                     console.log("El documento no existe.");
                 }
             })
             .catch(error => {
-                console.log(error);
+                console.error("Error al obtener el documento:", error);
             })
             .finally(() => {
                 setLoading(false);
             });
     }, [itemId]);
 
-    // Asegúrate de retornar el componente ItemDetail y el estado loading.
     return (
         <div>
             {loading && <p>Cargando...</p>}
-            {productos && <ItemDetail product={productos} />} {/* Cambiado a 'productos' */}
+            {productos && <ItemDetail productos={productos} />}
         </div>
     );
 }
