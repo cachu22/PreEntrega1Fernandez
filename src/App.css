@@ -1,4 +1,4 @@
-
+export App.css
 h1{
     color: yellow;
     text-align: center;
@@ -69,3 +69,13 @@ h2{
 .ActiveOption {
     color:#30FF24 ;
 }
+
+.cart-quantity {
+    background-color: red; /* o el color que desees */
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }

@@ -11,7 +11,7 @@ export const getProducts = () => {
 export const getProductById = (productId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            const product = productos.find(prod => prod.id === productId); // Cambiado a 'productos'
+            const product = productos.find(prod => prod.id === productId);
             if (product) {
                 resolve(product);
             } else {
@@ -25,10 +25,10 @@ export const getProductsByCategory = (productCategory) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             if (productCategory === "Productos") {
-                const productosProductos = productos.filter(Productos => Productos.categoria === "Productos"); // Cambiado a 'productos'
+                const productosProductos = productos.filter(Productos => Productos.categoria === "Productos");
                 resolve(productosProductos);
             } else {
-                const productosByCategory = productos.filter(Productos => Productos.categoria === productCategory); // Cambiado a 'productos'
+                const productosByCategory = productos.filter(Productos => Productos.categoria === productCategory);
                 resolve(productosByCategory);
             }
         }, 1000);

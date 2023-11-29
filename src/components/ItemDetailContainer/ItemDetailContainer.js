@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
 
         const docRef = doc(db, 'Productos', itemId);
 
-        setProductos(null); // Reiniciar productos mientras se carga
+        setProductos(null);
 
         getDoc(docRef)
             .then(response => {

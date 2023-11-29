@@ -1,11 +1,13 @@
-import React from 'react';
-
-const CartItem = ({ id, nombre, precio, cantidad }) => {
+const CartItem = ({ id, nombre, precio, quantity, onRemove }) => {
   return (
     <div className="cart-item">
-      <p>{nombre}</p>
-      <p>Precio: ${precio}</p>
-      <p>Cantidad: {cantidad}</p>
+      <div>
+        <h3>{nombre}</h3>
+        <p>Precio individual: ${precio}</p>
+        <p>Cantidad: {quantity}</p>
+        <p>Precio total: ${quantity * precio}</p>
+      </div>
+      <button onClick={() => onRemove(id)}>Quitar</button>
     </div>
   );
 };

@@ -1,13 +1,29 @@
 import './Item.css';
 import { Link } from 'react-router-dom';
-import { Card, Row, Col } from 'react-bootstrap'; // Importa Row y Col de Bootstrap
+import { Card, Row, Col } from 'react-bootstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ItemCount from '../ItemCount/ItemCount';
+import { useContext } from 'react';
+import { CartContext } from '../Context/prod';
 
 const Item = ({ id, nombre, img, precio, stock }) => {
+    const { addItem } = useContext(CartContext);
+
+    const handleOnAdd = (quantity) => {
+        const item = {
+            id,
+            nombre,
+            img,
+            precio,
+            stock
+        };
+
+        addItem(item, quantity);
+    };
+
     return (
         <Row>
-            <Col md={4}> {/* Coloca cada tarjeta en una columna de tamaño md (medium) 4 */}
+            <Col md={4}>
                 <Card style={{ width: '18rem', margin: '1rem' }}>
                     <img src={img} alt={nombre} className="ItemImg" />
                     <Card.Body>
@@ -23,6 +39,7 @@ const Item = ({ id, nombre, img, precio, stock }) => {
                                 <Link to={`/item/${id}`} className='Option'>
                                     Ver detalle
                                 </Link>
+                                <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
                             </ListGroup.Item>
                         </ListGroup>
                     </Card.Body>
