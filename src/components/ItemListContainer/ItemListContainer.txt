@@ -1,0 +1,58 @@
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from "../services/firebase/firebaseConfig";
+import ItemList from '../ItemList/ItemList';
+import Category from "../Category/category";
+
+const ItemListContainer = () => {
+    const [productos, setProductos] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const { categoryId } = useParams();
+    const [selectedCategory, setSelectedCategory] = useState(categoryId || null);
+
+    useEffect(() => {
+        setLoading(true);
+
+        const fetchData = async () => {
+            try {
+                const collectionRef = selectedCategory
+                    ? query(collection(db, 'Productos'), where('categoria', '==', selectedCategory))
+                    : collection(db, 'Productos');
+
+                const response = await getDocs(collectionRef);
+
+                const productosAdaptados = response.docs.map(doc => {
+                    const data = doc.data();
+                    return { id: doc.id, ...data };
+                });
+
+                setProductos(productosAdaptados);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [selectedCategory, categoryId]);
+
+    const handleSelectCategory = (categoria) => {
+        setSelectedCategory(categoria);
+    };
+
+    return (
+        <div>
+            <Category onSelectCategory={handleSelectCategory} />
+            {loading && <p>Cargando...</p>}
+            {productos && productos.length > 0 ? (
+                <ItemList Productos={productos} />
+            ) : (
+                <p>No hay productos disponibles.</p>
+            )}
+        </div>
+    );
+};
+
+export default ItemListContainer;
