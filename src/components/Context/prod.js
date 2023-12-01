@@ -6,14 +6,15 @@ export const CartContext = createContext({
   removeItem: () => {},
   clearCart: () => {},
   getTotal: () => 0,
+  totalQuantity: () => 0,
 });
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const addItem = (item, quantity) => {
+  const addItem = (item, Quantity) => {
     if (!isInCart(item.id)) {
-      setCart((prev) => [...prev, { ...item, quantity }]);
+      setCart((prev) => [...prev, { ...item, Quantity }]);
     } else {
       console.error("El producto ya fue agregado");
     }
@@ -33,12 +34,16 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotal = () => {
-    return cart.reduce((acc, item) => acc + item.precio * item.quantity, 0);
+    return cart.reduce((acc, item) => acc + item.precio * item.Quantity, 0);
+  };
+
+  const totalQuantity = () => {
+    return cart.reduce((acc, item) => acc + item.Quantity, 0);
   };
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clearCart, getTotal }}
+      value={{ cart, addItem, removeItem, clearCart, getTotal, totalQuantity }}
     >
       {children}
     </CartContext.Provider>

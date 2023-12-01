@@ -21,6 +21,7 @@ const Cart = () => {
             {cart.map((item) => (
                 <CartItem key={item.id} {...item} onRemove={() => removeItem(item.id)} />
             ))}
+            <h3>Cantidad total de items: {totalQuantity()}</h3>
             <h3>Total: ${getTotal()}</h3>
             <button onClick={() => clearCart()} className="Button">
                 Limpiar carrito

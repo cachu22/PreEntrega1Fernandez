@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
             });
     }, [itemId]);
 
-    return (
+    return ( 
         <div>
             {loading && <p>Cargando...</p>}
             {productos && <ItemDetail productos={productos} />}

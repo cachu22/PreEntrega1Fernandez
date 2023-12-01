@@ -44,7 +44,7 @@ console.log(products);
                   </Card.Body>
                   <ListGroup className="list-group-flush">
                     <ListGroup.Item>Precio: ${producto.precio}</ListGroup.Item>
-                    <ListGroup.Item><ItemCount initial={0} stock={10} onAdd={(quantity) => console.log('Cantidad agregada', quantity)}/></ListGroup.Item>
+                    <ListGroup.Item><ItemCount initial={0} stock={10} onAdd={(Quantity) => console.log('Cantidad agregada', Quantity)}/></ListGroup.Item>
                   </ListGroup>
                   <Card.Body>
                   </Card.Body>

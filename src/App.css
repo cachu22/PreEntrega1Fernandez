@@ -70,12 +70,16 @@ h2{
     color:#30FF24 ;
 }
 
-.cart-quantity {
-    background-color: red; /* o el color que desees */
+.cart-Quantity {
+    background-color: red;
     color: white;
     border-radius: 50%;
     padding: 0.2rem 0.5rem;
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  .CartWidget {
+    position: relative;
   }
