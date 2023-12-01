@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { db } from './services/firebase/firebaseConfig';
+import { db, serverTimestamp } from './services/firebase/firebaseConfig';
 import { addDoc, collection } from 'firebase/firestore';
 import { CartContext } from "./Context/prod";
 
@@ -10,7 +10,7 @@ const CheckoutForm = ({ onCheckout }) => {
     name: "",
     email: "",
     confirmEmail: "",
-    telefono: ""
+    telefono: "",
   });
 
   const [confirmationMessage, setConfirmationMessage] = useState("");
@@ -35,14 +35,14 @@ const CheckoutForm = ({ onCheckout }) => {
         name: fields.name,
         email: fields.email,
         telefono: fields.telefono,
-        Items: totalQuantity()
+        items: totalQuantity(),
+        fechaCompra: serverTimestamp(),
+        estadoPedido: fields.estadoPedido
       };
 
       const precioTotal = getTotal();
 
       const itemsDetails = cart.map(item => ({ id: item.id, nombre: item.nombre, cantidad: item.Quantity, precio: item.precio }));
-
-      //{totalQuantity() > 0 && <span className='cart-Quantity'>{totalQuantity()}</span>} copia de CartWidget
 
       const docRef = await addDoc(collection(db, 'ordenes'), {
         Datos: buyerDetails,
@@ -52,13 +52,14 @@ const CheckoutForm = ({ onCheckout }) => {
 
       const orderId = docRef.id;
 
-      setConfirmationMessage(<h4>`¡Gracias por su compra! Su número de orden es: ${orderId}`</h4>);
+      setConfirmationMessage(`¡Gracias por su compra! Su número de orden es: ${orderId}`);
 
       setFields({
         name: "",
         email: "",
         confirmEmail: "",
-        telefono: ""
+        telefono: "",
+        estadoPedido: ""
       });
 
       clearCart();
@@ -108,6 +109,15 @@ const CheckoutForm = ({ onCheckout }) => {
           name="telefono"
           value={fields.telefono}
           onChange={(e) => setFields({ ...fields, telefono: e.target.value })}
+        />
+      </div>
+      <div>
+        <label htmlFor="estadoPedido">Estado del Pedido</label>
+        <input
+          type="text"
+          name="estadoPedido"
+          value={fields.estadoPedido}
+          onChange={(e) => setFields({ ...fields, estadoPedido: e.target.value })}
         />
       </div>
       <button type="submit">Finalizar compra</button>
