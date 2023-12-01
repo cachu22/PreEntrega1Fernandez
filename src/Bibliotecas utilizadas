@@ -1,19 +1,17 @@
-1. createContext: Se utiliza para crear un contexto en React, que permite pasar datos a través del árbol de componentes sin tener que pasar props manualmente en cada nivel. (Por ej el span en el carro y los datos de compra enviados a Firebase)
+1. createContext: https://es.legacy.reactjs.org/docs/context.html // Se utiliza para crear un contexto en React, que permite pasar datos a través del árbol de componentes sin tener que pasar props manualmente en cada nivel. (Por ej el span en el carro y los datos de compra enviados a Firebase)
 
-2. useContext: Hook que permite consumir un contexto creado con createContext.
+2. useContext: https://es.legacy.reactjs.org/docs/context.html // Hook que permite consumir un contexto creado con createContext.
 
-3. useState: Hook que permite agregar estado a componentes funcionales de React.
+3. useState: https://legacy.reactjs.org/docs/hooks-state.html // Hook que permite agregar estado a componentes funcionales de React.
 
-4. useEffect: Hook que permite realizar efectos secundarios en componentes funcionales de React, como llamadas a API, suscripciones a datos, etc. En mi caso la llamada a Firebase
+4. useEffect: https://legacy.reactjs.org/docs/hooks-state.html // Hook que permite realizar efectos secundarios en componentes funcionales de React, como llamadas a API, suscripciones a datos, etc. En mi caso la llamada a Firebase
 
-5. Link (de react-router-dom): Componente que se utiliza para la navegación entre diferentes rutas en una aplicación React que utiliza React Router.
+5. Link (de react-router-dom): https://reactrouter.com/en/main // Componente que se utiliza para la navegación entre diferentes rutas en una aplicación React que utiliza React Router.
 
-6. Card, Row, Col (de react-bootstrap): Componentes de la librería react-bootstrap utilizados para construir interfaces de usuario con estilos de Bootstrap.
+6. Card, Row, Col (de react-bootstrap): https://react-bootstrap.netlify.app // Componentes de la librería react-bootstrap utilizados para construir interfaces de usuario con estilos de Bootstrap.
 
-7. useParams (de react-router-dom): Hook que permite acceder a los parámetros de la URL en componentes asociados a una ruta específica.
+7. useParams (de react-router-dom): https://reactrouter.com/en/main // Hook que permite acceder a los parámetros de la URL en componentes asociados a una ruta específica.
 
-8. useNavigate (de react-router-dom): Hook que proporciona una función de navegación que se puede utilizar para cambiar programáticamente la ruta en una aplicación React Router.
+8. useNavigate (de react-router-dom): https://reactrouter.com/en/main // Hook que proporciona una función de navegación que se puede utilizar para cambiar programáticamente la ruta en una aplicación React Router.
 
-9. Accordion: Componente que generalmente se utiliza en interfaces de usuario para organizar y mostrar información de forma plegable y expansible.
-
-10. BrowserRouter, Routes, Route, Navigate (de react-router-dom): Componentes y utilidades de React Router para manejar la navegación en una aplicación React.
+9. BrowserRouter, Routes, Route, Navigate (de react-router-dom): https://reactrouter.com/en/main // Componentes y utilidades de React Router para manejar la navegación en una aplicación React.
